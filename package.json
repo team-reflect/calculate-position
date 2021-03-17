@@ -1,6 +1,6 @@
 {
   "name": "calculate-position",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calculate the optimum position for an element relative to another.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
