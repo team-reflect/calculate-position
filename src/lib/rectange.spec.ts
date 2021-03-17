@@ -17,8 +17,8 @@ test('rectange non-overlap', (t) => {
     height: 100,
   };
 
-  t.is(getRectangleOverlap(rectangeA, rectangeB), 0)
-})
+  t.is(getRectangleOverlap(rectangeA, rectangeB), 0);
+});
 
 test('rectange negative non-overlap', (t) => {
   const rectangeA: Rectangle = {
@@ -35,8 +35,8 @@ test('rectange negative non-overlap', (t) => {
     height: 100,
   };
 
-  t.is(getRectangleOverlap(rectangeA, rectangeB), 0)
-})
+  t.is(getRectangleOverlap(rectangeA, rectangeB), 0);
+});
 
 test('rectange overlap', (t) => {
   const rectangeA: Rectangle = {
@@ -53,8 +53,8 @@ test('rectange overlap', (t) => {
     height: 100,
   };
 
-  t.is(getRectangleOverlap(rectangeA, rectangeB), 50 * 100)
-})
+  t.is(getRectangleOverlap(rectangeA, rectangeB), 50 * 100);
+});
 
 test('rectange negative overlap', (t) => {
   const rectangeA: Rectangle = {
@@ -71,5 +71,5 @@ test('rectange negative overlap', (t) => {
     height: 100,
   };
 
-  t.is(getRectangleOverlap(rectangeA, rectangeB), 50 * 100)
-})
+  t.is(getRectangleOverlap(rectangeA, rectangeB), 50 * 100);
+});
