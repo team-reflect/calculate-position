@@ -97,3 +97,27 @@ test('calculateBestDirection TopRight', (t) => {
     Direction.TopRight
   );
 });
+
+test('calculateBestDirection BottomRight 2', (t) => {
+  const viewport: Dimensions = {
+    width: 1094,
+    height: 384,
+  };
+
+  const anchor: Rectangle = {
+    left: 26,
+    top: 65,
+    width: 10,
+    height: 27,
+  };
+
+  const dimensions: Dimensions = {
+    width: 208,
+    height: 36,
+  };
+
+  t.deepEqual(
+    calculateBestDirection({ anchor, dimensions, viewport }),
+    Direction.BottomRight
+  );
+});
