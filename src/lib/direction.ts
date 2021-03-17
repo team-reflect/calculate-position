@@ -105,7 +105,8 @@ export const calculateBestDirection = ({
   directions?: DirectionPoint;
 }) => {
   const viewportRectangle: Rectangle = {
-    ...viewport,
+    width: viewport.width,
+    height: viewport.height,
     left: 0,
     top: 0,
   };
