@@ -11,8 +11,10 @@ export interface Point {
 export enum Direction {
   BottomRight = 'BottomRight',
   BottomLeft = 'BottomLeft',
+  BottomCenter = 'BottomCenter',
   TopRight = 'TopRight',
   TopLeft = 'TopLeft',
+  TopCenter = 'TopCenter',
 }
 
 export interface Rectangle {

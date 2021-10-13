@@ -22,9 +22,11 @@ import { Dimensions, Direction, DirectionPoint, Rectangle } from './types';
 export const getDirections = ({
   anchor,
   dimensions,
+  viewport,
 }: {
   anchor: Rectangle;
   dimensions: Dimensions;
+  viewport?: Dimensions;
 }): DirectionPoint => {
   return {
     [Direction.BottomRight]: {
@@ -35,6 +37,10 @@ export const getDirections = ({
       left: anchor.left - dimensions.width,
       top: anchor.top + anchor.height,
     },
+    [Direction.BottomCenter]: {
+      left: Math.round(((viewport?.width ?? 0) - dimensions.width) / 2),
+      top: anchor.top + anchor.height,
+    },
     [Direction.TopRight]: {
       left: anchor.left + anchor.width,
       top: anchor.top - dimensions.height,
@@ -42,6 +48,10 @@ export const getDirections = ({
     [Direction.TopLeft]: {
       left: anchor.left - dimensions.width,
       top: anchor.top - dimensions.height,
+    },
+    [Direction.TopCenter]: {
+      left: Math.round(((viewport?.width ?? 0) - dimensions.width) / 2),
+      top: anchor.top - anchor.height,
     },
   };
 };
@@ -97,6 +107,7 @@ export const calculateBestDirection = ({
   directions = getDirections({
     anchor,
     dimensions,
+    viewport,
   }),
 }: {
   anchor: Rectangle;

@@ -50,6 +50,30 @@ test('calculateBestDirection BottomLeft', (t) => {
   );
 });
 
+test('calculateBestDirection BottomCenter', (t) => {
+  const viewport = {
+    width: 400,
+    height: 600,
+  };
+
+  const anchor = {
+    left: 200,
+    top: 100,
+    width: 0,
+    height: 30,
+  };
+
+  const dimensions = {
+    width: 300,
+    height: 200,
+  };
+
+  t.deepEqual(
+    calculateBestDirection({ anchor, dimensions, viewport }),
+    Direction.BottomCenter
+  );
+});
+
 test('calculateBestDirection TopLeft', (t) => {
   const viewport: Dimensions = {
     width: 800,
@@ -95,6 +119,30 @@ test('calculateBestDirection TopRight', (t) => {
   t.deepEqual(
     calculateBestDirection({ anchor, dimensions, viewport }),
     Direction.TopRight
+  );
+});
+
+test('calculateBestDirection TopCenter', (t) => {
+  const viewport: Dimensions = {
+    width: 400,
+    height: 600,
+  };
+
+  const anchor: Rectangle = {
+    left: 300,
+    top: 600 - 300,
+    width: 300,
+    height: 300,
+  };
+
+  const dimensions: Dimensions = {
+    width: 350,
+    height: 200,
+  };
+
+  t.deepEqual(
+    calculateBestDirection({ anchor, dimensions, viewport }),
+    Direction.TopCenter
   );
 });
 

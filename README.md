@@ -1,8 +1,8 @@
 # calculate-position
 
-Calculates the best position (left/top coords) for a given anchor and dimensions. 
+Calculates the best position (left/top coords) for a given anchor and dimensions.
 
-Mostly useful for placing popups and tooltips correctly in the viewports. 
+Mostly useful for placing popups and tooltips correctly in the viewports.
 
 Behind the scenes we calculate all the position positions for the popup element (TopLeft, TopRight etc) and then choose the one that has the largest overlap with the viewport (normal the window).
 
@@ -13,8 +13,10 @@ Calculates the best direction (e.g. BottomLeft) for a given anchor and dimension
 Valid directions are:
 - `TopLeft`
 - `TopRight`
+- `TopCenter`
 - `BottomLeft`
 - `BottomRight`
+- `BottomCenter`
 
 `BottomRight` is the default direction.
 
@@ -27,7 +29,7 @@ Valid arguments:
 
 Example:
 ```js
-import calculateBestDirection from 'calculate-position'
+import {calculateBestDirection} from 'calculate-position'
 
 const anchor = popupAnchorElement.getBoundingClientRect()
 const dimensions = {width: popupWidth, height: popupHeight}
@@ -38,7 +40,7 @@ console.log(calculateBestDirection({anchor, dimensions}))
 
 ### calculateBestPosition
 
-Returns coordinates (i.e. `top` and `left`) for a given anchor and dimensions. 
+Returns coordinates (i.e. `top` and `left`) for a given anchor and dimensions.
 
 Valid arguments:
 ```
@@ -49,7 +51,7 @@ Valid arguments:
 
 Example:
 ```js
-import calculateBestPosition from 'calculate-position'
+import {calculateBestPosition} from 'calculate-position'
 
 const anchor = anchorElement.getBoundingClientRect()
 const dimensions = {width: popupWidth, height: popupHeight}
