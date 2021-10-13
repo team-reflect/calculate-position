@@ -33,7 +33,7 @@ export const calculateBestPosition = ({
   dimensions: Dimensions;
   viewport?: Dimensions;
 }): Point => {
-  const directions = getDirections({ anchor, dimensions });
+  const directions = getDirections({ anchor, dimensions, viewport });
 
   const direction = calculateBestDirection({
     anchor,
